@@ -1,10 +1,10 @@
 import React from 'react'
-import { Typography, Grid, Button, Card, CardContent} from '@mui/material'
-import {Link} from 'react-router-dom'
+//import { Typography, Grid, Button, Card, CardContent} from '@mui/material'
+//import {Link} from 'react-router-dom'
 import SearchResults from '../components/searchResults'
 
 const Search = ({searchResults}) => {
-    const people = ["Search","Taco","Fish","Butter","Hello"]
+    //const people = ["Search","Taco","Fish","Butter","Hello"]
     const cheapFood = searchResults.filter((value) => {return value.price === "$"})
     const moderateFood = searchResults.filter((value) => {return value.price === "$$"})
     const expensiveFood = searchResults.filter((value) => {return value.price === "$$$"})
