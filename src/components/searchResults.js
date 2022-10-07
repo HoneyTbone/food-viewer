@@ -1,7 +1,15 @@
 import React from  'react'
 import { Typography, Grid, Button, Card, CardContent, CardActionArea, CardMedia, CardActions} from '@mui/material'
+import { useNavigate } from 'react-router-dom'
 
-const SearchResults = ({food, title}) => {
+const SearchResults = ({food, title, setRestId}) => {
+
+    const Navigate = useNavigate()
+
+    const goToDetails = (id) => {
+        setRestId(id)
+        Navigate("../detail")
+    }
 
     return(
             <>
@@ -42,8 +50,7 @@ const SearchResults = ({food, title}) => {
                                             </Typography>
                                         </CardContent>
                                         <CardActions>
-                                            <Button size="small">Share</Button>
-                                            <Button size="small">Learn More</Button>
+                                            <Button size="small" onClick={(e) => goToDetails(value.id)}>Details</Button>
                                         </CardActions>
                                     </CardActionArea>
                                 </Card>
