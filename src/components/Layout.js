@@ -1,8 +1,8 @@
 import React,{useState} from 'react'
 import { Typography, Box, AppBar, Toolbar, IconButton, Button, TextField, InputAdornment, Paper } from '@mui/material'
 import MenuIcon from '@mui/icons-material/Menu';
-import TestGrid from '../pages/TestGrid'
-import Search from '../pages/Search'
+import Search from '../pages/Search';
+import Detail from '../pages/Detail';
 import {BrowserRouter, Route, Routes} from 'react-router-dom'
 import SearchIcon  from '@mui/icons-material/Search'
 import yelp from '../api/yelp'
@@ -72,8 +72,8 @@ const Layout = () => {
             <Typography variant="h6">Your search results:{searchText}</Typography>
             <Routes>
                 <Route exact path="/" element={<Search searchResults={results}/>} />
-                <Route exact path="/testgrid" element={<TestGrid/>} />
                 <Route exact path="/search" element={<Search searchResults={results}/>} />
+                <Route exact path="/detail" element={<Detail/>} />
             </Routes>
             </BrowserRouter>
             </Paper>
