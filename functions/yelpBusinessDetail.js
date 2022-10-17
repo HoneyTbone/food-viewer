@@ -2,14 +2,11 @@ const axios = require('axios')
 
 exports.handler = async (events) => {
     // do stuff here.
-    const term = events.query.StringParameters.term || "mexican"
-    const location = events.query.StringParameters.location || "24416"
-    console.log(">>>> term: ", term)
-    console.log(">>>> location: ", location)
+    const id = events.query.StringParameters.id || "GI8UNuL9J4NZB1ErQQ1OOg"
 
     const response = await axios({
         method : 'get',
-        url : "https://api.yelp.com/v3/businesses/search",
+        url : `https://api.yelp.com/v3/businesses/${id}`,
         params : {
             term : term,
             location : location,
