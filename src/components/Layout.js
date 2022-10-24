@@ -14,28 +14,28 @@ const Layout = () => {
     const [restId, setRestId] = useState('nothing to see here')
 
     const searchApi = async (location, term) => {
-        // const response = await yelp(location, term)
-        // console.log(response.data.businesses)
-        // setResults(response.data.businesses)
-       // const location = '24416'
+        const response = await yelp(location, term)
+        console.log(response.data.businesses)
+        setResults(response.data.businesses)
 
-        const response2 = await fetch(`/api/yelp?term=${term}&location=${location}`)
-        const data = await response2.json()
-        console.log("hi", data)
-        setResults(data.businesses)
+        // const response2 = await fetch(`/api/yelp?term=${term}&location=${location}`)
+        // const data = await response2.json()
+        // console.log("hi", data)
+       // setResults(data.businesses)
 
-        const response3 = await fetch(`api/yelpBusinessDetail`)
-        const data3 = await response3.json()
+        // const response3 = await fetch(`api/yelpBusinessDetail`)
+        // const data3 = await response3.json()
+        // console.log("hi", data3)
     }
 
     const setSearch = (e) => {
         setSearchText(e.target.value)
-        searchApi(zipText, searchText)
+        searchApi(zipText, e.target.value)
     }
 
     const setZip = (zip) => {
         setZipText(zip.target.value)
-        searchApi(zipText, searchText)
+        searchApi(zip.target.value, searchText)
     }
 
     return (

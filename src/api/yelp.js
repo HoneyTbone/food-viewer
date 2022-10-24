@@ -21,4 +21,4 @@ const Axios = async (location, term) => {
     
 
 
-//export default Axios
+export default Axios
